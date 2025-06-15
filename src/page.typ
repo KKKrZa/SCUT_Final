@@ -1,7 +1,12 @@
-#import "@preview/cuti:0.3.0": show-cn-fakebold
+#import "@preview/cuti:0.3.0": show-cn-fakebold, regex-fakebold
 
 #let setup-page(name) = (doc) => {
   show: show-cn-fakebold
+  show strong: it => {
+    set text(weight: "bold")
+    show regex("[0-9A-Za-z]+"): content => regex-fakebold(reg-exp: "[0-9A-Za-z]")[#content]
+    it.body
+  }
 
   let dot_size = 1.5pt
   let dot_spacing = 2pt
@@ -133,7 +138,7 @@
         align(center)[
           #counter(page).display(
             (n, total) => [
-              *《#name》试卷 第 #n 页 共 #total 页*
+              *《#name》试卷 第 #(n) 页 共 #(total) 页*
             ],
             both: true
           )
