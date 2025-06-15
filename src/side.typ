@@ -1,6 +1,6 @@
 #import "@preview/cuti:0.3.0": show-cn-fakebold, regex-fakebold
 
-#let setup-page(name) = (doc) => {
+#let side(name) = (doc) => {
   show: show-cn-fakebold
   show strong: it => {
     set text(weight: "bold")

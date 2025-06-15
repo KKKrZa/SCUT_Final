@@ -1,5 +1,10 @@
-#import "src/page.typ": setup-page
+#import "src/side.typ": side
 #import "src/header.typ": header
+#import "src/question.typ": *
+
+#let question = question
+#let choice = choice
+#let subquestion = subquestion
 
 #let exam(
   name: "",
@@ -13,7 +18,7 @@
     title: name,
     author: school,
   )
-  show: setup-page(course)
+  show: side(course)
   set par(justify: true, leading: 0.8em)
 
   header(
@@ -28,15 +33,13 @@
     duration
   )
   body
-}
 
-#let question(number, content) = [
-  #text(weight: "bold")[#number. ] #content
-  #v(1em)
-]
+  finish-exam()
+}
 
 #let section-title(title) = [
   #v(1em)
-  #text(weight: "bold", size: 14pt)[#title]
+  #text(size: 14pt)[*#title*]
   #v(0.8em)
 ]
+
