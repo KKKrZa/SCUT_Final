@@ -5,6 +5,7 @@
 #let question = question
 #let choice = choice
 #let subquestion = subquestion
+#let blank = blank
 
 #let exam(
   name: "",
@@ -25,10 +26,8 @@
     course,
     school,
     semester,
-    "A",
+    "B",
     "闭卷",
-    6,
-    100,
     "所有答案请直接答在试卷上",
     duration
   )

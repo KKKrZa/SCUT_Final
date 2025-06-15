@@ -4,7 +4,7 @@
   show: show-cn-fakebold
   show strong: it => {
     set text(weight: "bold")
-    show regex("[0-9A-Za-z]+"): content => regex-fakebold(reg-exp: "[0-9A-Za-z]")[#content]
+    show regex("[0-9A-Za-z。]+"): content => regex-fakebold(reg-exp: "[0-9A-Za-z。]")[#content]
     it.body
   }
 
